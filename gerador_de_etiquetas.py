@@ -26,7 +26,7 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 CREDS = Credentials.from_service_account_file(credenciais_path, scopes=SCOPES)
 
 gc = gspread.authorize(CREDS)
-SHEET_ID = "1DZeogvK0K0mUgtcW-qFR3JSvaGtdu8C7oPljT8EfdDI"
+SHEET_ID = "id da planilha"
 SHEET_NAME = "PRODUTOS"
 planilha = gc.open_by_key(SHEET_ID).worksheet(SHEET_NAME)
 
@@ -78,7 +78,7 @@ class EtiquetaPDF(FPDF):
     def gerar_etiqueta(self, tipo, descricao, codigo_barras, id_digitado, quantidade, unidade, lote, data_chegada, data_validade):
         self.add_page()
 
-        logo_path = recurso_caminho("chesiquimica-logo-png.png")
+        logo_path = recurso_caminho("logo.png")
         logo_width_mm = 20
         logo_x = 0
         logo_y = 0
